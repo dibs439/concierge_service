@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home | Concierge RAMP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="css/codiqa.ext.css" rel="stylesheet">
+  <link href="css/jquery.mobile-1.4.2.css" rel="stylesheet">
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mobile-1.4.2.min.js"></script>
+  <script src="js/codiqa.ext.js"></script>
+
+  <script src="js/script.js"></script>
+  
+  <!-- For JQuery Calendar -->
+  
+  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+  
+  <script src="js/jquery.datetimepicker.js"></script>
+  
+</head>
+<body>
+<div data-role="page" data-control-title="Home" id="page1">
+    <div data-theme="a" data-role="header">
+        <h1 class="ui-title">
+            Concierge RAMP Mobile
+        </h1>
+    </div>
+	<form action="POST">
+    <div role="main" class="ui-content">
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="tail_id">
+                Tail #*:
+            </label>
+            <input name="" id="tail_id" placeholder="" value="" type="text" maxlength="25">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="ac_type">
+                AC Type*:
+            </label>
+            <input name="" id="ac_type" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="dateinput">
+            <label for="arrival_time">
+                Arrival TIme:
+            </label>
+            <input name="" id="arrival_time" placeholder="" value="" type="date">
+        </div>
+        <div id="arrivedcontrol" class="ui-field-contain" data-controltype="checkboxes">
+            <fieldset data-role="controlgroup" data-type="vertical">
+                <input id="arrived" name="" type="checkbox" value="1">
+                <label for="arrived">
+                    Arrived?
+                </label>
+            </fieldset>
+        </div>
+        <div class="ui-field-contain" data-controltype="dateinput">
+            <label for="departure_time">
+                Departure Time:
+            </label>
+            <input name="" id="departure_time" placeholder="" value="" type="date">
+        </div>
+        <div id="departedcontrol" class="ui-field-contain" data-controltype="checkboxes">
+            <fieldset data-role="controlgroup" data-type="vertical">
+                <input id="departed" name="" type="checkbox" value="1">
+                <label for="departed">
+                    Departed?
+                </label>
+            </fieldset>
+        </div>
+        <h2 class="heading2">
+            Fuel
+        </h2>
+        <div class="ui-field-contain" data-controltype="selectmenu">
+            <label for="fuel_type">
+                Fuel Type:
+            </label>
+            <select id="fuel_type" name="">
+                <option value="">
+                    Select
+                </option>
+                <option value="100LL">
+                    100LL
+                </option>
+                <option value="Jet A">
+                    Jet A
+                </option>
+            </select>
+        </div>
+        <div id="fuel_status" class="ui-field-contain" data-controltype="radiobuttons">
+            <fieldset data-role="controlgroup" data-type="vertical">
+                <legend>
+                    Fuel Status:
+                </legend>
+                <input id="fuel_status1" name="fuel_status" value="progress" type="radio">
+                <label for="fuel_status1">
+                    In Progress
+                </label>
+                <input id="fuel_status2" name="fuel_status" value="completed" type="radio">
+                <label for="fuel_status2">
+                    Completed
+                </label>
+            </fieldset>
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="total_gallons">
+                Total
+            </label>
+            <input name="" id="total_gallons" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="textarea">
+            <label for="fuel_instructions">
+                Special Instructions
+            </label>
+            <textarea name="" id="fuel_instructions" placeholder=""></textarea>
+        </div>
+        <h2 class="heading5 heading2">
+            Oil
+        </h2>
+        <div class="ui-field-contain" data-controltype="radiobuttons">
+            <fieldset data-role="controlgroup" data-type="vertical">
+                <legend>
+                    Oil Status:<br>
+					<a href="#" id="oil_status_deselect">Deselect</a>
+                </legend>
+                <input id="oil_status1" name="oil_status" value="requested" type="radio">
+                <label for="oil_status1">
+                    Requested
+                </label>
+                <input id="oil_status2" name="oil_status" value="progress" type="radio">
+                <label for="oil_status2">
+                    In Progress
+                </label>
+                <input id="oil_status3" name="oil_status" value="completed" type="radio">
+                <label for="oil_status3">
+                    Completed
+                </label>
+            </fieldset>
+        </div>
+        <div class="ui-field-contain" data-controltype="selectmenu">
+            <label for="oil_type">
+                Oil Type:
+            </label>
+            <select id="oil_type" name="">
+				<option value="">
+                    Select
+                </option>
+				
+                <option value="Piston Oils">
+                    Piston Oils
+                </option>
+                <option value="Turbine Oils">
+                    Turbine Oils
+                </option>
+            </select>
+        </div>
+        <div class="ui-field-contain" data-controltype="selectmenu">
+            <label for="oil_grade">
+                Grade:
+            </label>
+            <select id="oil_grade" name="">
+				<option value="">
+                    Select
+                </option>
+				
+                <option value="Aeroshell 15W50">
+                    Aeroshell 15W50
+                </option>
+                <option value="Philips 20W50">
+                    Philips 20W50
+                </option>
+				
+				<option value="BP2380">
+                    BP2380
+                </option>
+				
+				<option value="Mobil Jet II">
+                    Mobil Jet II
+                </option>
+            </select>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-field-contain" data-controltype="textinput">
+                    <label for="engine_1">
+                        Engine:
+                    </label>
+                    <input name="" id="engine_1" placeholder="" value="" type="text">
+                </div>
+                <div class="ui-field-contain" data-controltype="textinput">
+                    <label for="engine_2">
+                        Engine:
+                    </label>
+                    <input name="" id="engine_2" placeholder="" value="" type="text">
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-field-contain" data-controltype="textinput">
+                    <label for="qty_1">
+                        Qty:
+                    </label>
+                    <input name="" id="qty_1" placeholder="" value="" type="text">
+                </div>
+                <div class="ui-field-contain" data-controltype="textinput">
+                    <label for="qty_2">
+                        Qty:
+                    </label>
+                    <input name="" id="qty_2" placeholder="" value="" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="ui-field-contain" data-controltype="textarea">
+            <label for="oil_instructions">
+                Instructions
+            </label>
+            <textarea name="" id="oil_instructions" placeholder=""></textarea>
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="customer_name">
+                Customer:
+            </label>
+            <input name="" id="customer_name" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="employee_no">
+                Employee #:
+            </label>
+            <input name="" id="employee_no" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div id="parking_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="parkingb" name="" type="checkbox" value="1">
+                        <label for="parkingb">
+                            Parking
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="parking" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="parking1" name="parkingc" value="progress" type="radio">
+                        <label for="parking1">
+                            In Progress
+                        </label>
+                        <input id="parking2" name="parkingc" value="completed" type="radio">
+                        <label for="parking2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+			<div class="ui-block-a">
+                <div id="parking_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="hangerb" name="" type="checkbox" value="1">
+                        <label for="hangerb">
+                            Hanger
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+			<div class="ui-block-b">
+                <div id="parking" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="hanger1" name="hangerc" value="progress" type="radio">
+                        <label for="hanger1">
+                            In Progress
+                        </label>
+                        <input id="hanger2" name="hangerc" value="completed" type="radio">
+                        <label for="hanger2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div id="landing_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="landingb" name="" type="checkbox" value="1">
+                        <label for="landingb">
+                            Landing
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="landing" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="landing1" name="landingc" value="progress" type="radio">
+                        <label for="landing1">
+                            In Progress
+                        </label>
+                        <input id="landing2" name="landingc" value="completed" type="radio">
+                        <label for="landing2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div id="facility_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="facilityb" name="" type="checkbox" value="1">
+                        <label for="facilityb">
+                            Facility
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="facility" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="facility1" name="facilityc" value="progress" type="radio">
+                        <label for="facility1">
+                            In Progress
+                        </label>
+                        <input id="facility2" name="facilityc" value="completed" type="radio">
+                        <label for="facility2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div id="vehicle_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="vehicleb" name="" type="checkbox" value="1">
+                        <label for="vehicleb">
+                            Vehicle
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="vehicle" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="vehicle1" name="vehiclec" value="progress" type="radio">
+                        <label for="vehicle1">
+                            In Progress
+                        </label>
+                        <input id="vehicle2" name="vehiclec" value="completed" type="radio">
+                        <label for="vehicle2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div id="gpu_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="gpub" name="" type="checkbox" value="1">
+                        <label for="gpub">
+                            GPU
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="gpu" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="gpu1" name="gpuc" value="progress" type="radio">
+                        <label for="gpu1">
+                            In Progress
+                        </label>
+                        <input id="gpu2" name="gpuc" value="completed" type="radio">
+                        <label for="gpu2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div id="catering_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="cateringb" name="" type="checkbox" value="1">
+                        <label for="cateringb">
+                            Catering
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="catering" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="catering1" name="cateringc" value="progress" type="radio">
+                        <label for="catering1">
+                            In Progress
+                        </label>
+                        <input id="catering2" name="cateringc" value="completed" type="radio">
+                        <label for="catering2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div id="lav_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="lavb" name="" type="checkbox" value="1">
+                        <label for="lavb">
+                            LAV
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="lav" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="lav1" name="lavc" value="progress" type="radio">
+                        <label for="lav1">
+                            In Progress
+                        </label>
+                        <input id="lav2" name="lavc" value="completed" type="radio">
+                        <label for="lav2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="lav_srvc_by">
+                Srvc By
+            </label>
+            <input name="" id="lav_srvc_by" placeholder="" value="" type="text">
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div id="h20_ch" class="ui-field-contain" data-controltype="checkboxes">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <input id="h2ob" name="" type="checkbox" value="1">
+                        <label for="h2ob">
+                            H2O
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div id="h2o" class="ui-field-contain" data-controltype="radiobuttons">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <input id="h2o1" name="h2oc" value="progress" type="radio">
+                        <label for="h2o1">
+                            In Progress
+                        </label>
+                        <input id="h2o2" name="h2oc" value="completed" type="radio">
+                        <label for="h2o2">
+                            Completed
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="ui-field-contain" data-controltype="textinput">
+            <label for="h2o_srvc_by">
+                Srvc By
+            </label>
+            <input name="" id="h2o_srvc_by" placeholder="" value="" type="text">
+        </div>
+        <div id="security_ch" class="ui-field-contain" data-controltype="checkboxes">
+            <fieldset data-role="controlgroup" data-type="vertical">
+                <input id="security" name="" type="checkbox" value="1">
+                <label for="security">
+                    Security
+                </label>
+            </fieldset>
+        </div>
+        <div class="ui-field-contain" data-controltype="textarea">
+            <label for="notes">
+                Notes
+            </label>
+            <textarea name="" id="notes" placeholder=""></textarea>
+        </div>
+    </div>
+	<input type="submit" value="Submit"/>
+	</form>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
